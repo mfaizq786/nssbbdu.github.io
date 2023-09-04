@@ -1,28 +1,216 @@
 
-var blood = [1,36,420];
-var poster = [1,36,420];
-var speech = [1,36,420];
+var blood = [
+"9026568054",
+"9555867997",
+"8948515918",
+"9140247615",
+"8810824142",
+"6388636736",
+"7390081130",
+"9115247511",
+"6393293381",
+"6306284218",
+"9369985828",
+"6394990798",
+"8960055357",
+"8004080382",
+"7754081002",
+"9140431055",
+"8933050070",
+"9369210188",
+"9580496023",
+"9555876251",
+"7081289773",
+"7236035459",
+"9708153594",
+"9336248929",
+"9305651970",
+"6395980363",
+"7054162834",
+"8528992012",
+"9717166569",
+"9368114901",
+"8299507908",
+"8577001721",
+"8318968233",
+"8299593865",
+"8887807456",
+"8368899572",
+"9517229493",
+"8318968233",
+"7380358207",
+"7781890843",
+"6386134620"
+];
+
+var bloodName = [
+"Rudraksh Rai",
+"Khushi mahroj",
+"Yasmeen",
+"Prakhar Verma",
+"Aryan Verma",
+"Yuvraj Singh", 
+"Abbas Mehdi Hasan", 
+"Shikhar Upadhyay",
+"Anuj Singh",
+"Abhinav joshi", 
+"Anishka Gupta",
+"Rishabh dwivedi", 
+"Shivang Mishra",
+"Kashik Mishra",
+"Adarsh gupta",
+"Manish Verma",
+"Purandev Singh",
+"Abhinav Pandey",
+"Aditya Nikhil Raj",
+"Arpita Singh",
+"Annat Tripathi",
+"Anushka Shukla",
+"Avanish dubey",
+"Ayan Ahmad",
+"Manjeet Gupta",
+"Sumit Yadav",
+"Jai bhargava", 
+"Mohd. Sami",
+"Shruti Shukla",
+"Pallavi Raturi",
+"Abhishek Kumar pandey",
+"MOHD FAIZ QURESHI",
+"Ali ahmed",
+"Aditya Raj",
+"Ayush Kathri",
+"Shubham Tripathi",
+"Mohd Adnan",
+"Ali Ahmad",
+"Shadab Ansari",
+"Md Danish",
+"Mohd Faiz Qureshi"  
+];
+
+// poster Numbers and names
+var poster =["9142264877",
+"9555288026",
+"7651978103",
+"8057886511",
+"8429351328",
+"7620720947",
+"9120805567",
+"9140853269",
+"9120953242",
+"8931980269",
+"7267906352",
+"8528728766",
+"8726398174",
+"7275170307",
+"9648367868",
+"7754851222",
+"8368899572",
+"9517229493",
+"8318968233",
+"7380358207",
+"7781890843",
+"6386134620"
+];
+
+var posterName = [
+  "Sinu kumari",
+  "Khushboo singh", 
+  "Sumi Gaur",
+  "Tanu Tiwari",
+  "Priyanka Sharma", 
+  "NIKITA SINGH",
+  "Nuzhat",
+  "Arpita Singh", 
+  "Aditi Singh", 
+  "Anu Kushwaha", 
+  "Nandini Singh", 
+  "Vaishnavi Agarwal", 
+  "Shivani yadav",
+  "Priya singh", 
+  "Pratibha Umrao", 
+  "MANSHA SAHU",
+  "Shubham Tripathi",
+  "Mohd Adnan",
+  "Ali Ahmad",
+  "Shadab Ansari",
+  "Md Danish",
+  "Mohd Faiz Qureshi"  
+];
+
+// Speech name and Number
+
+var speech= [
+"9101824025",
+"9415175584",
+"7973882236",
+"7458048119",
+"9508863897",
+"8103139145",
+"9651425978",
+"6391511377",
+"9793048868",
+"8604449052",
+"9115247511",
+"8879367682",
+"8081662051",
+"6306286303",
+"7307906942",
+"9369985828",
+"8368899572",
+"9517229493",
+"8318968233",
+"7380358207",
+"7781890843",
+"6386134620"
+];
+
+var speechName = [
+"Rishav Mishra", 
+"Shivansh Chandra",
+"Rohan Verma",
+"Ayush pathak",
+"Sonali kumari", 
+"Khushi Singh", 
+"Ananya Singhal",
+"Eshika Singh Chauhan", 
+"Deeksha Bhadauria", 
+"Mohd Farhan", 
+"Shikhar Upadhyay", 
+"Agrima Dwivedi", 
+"Khushi yadav",
+"Dolly Shahi", 
+"Sakshi Mishra", 
+"Anishka Gupta",
+"Shubham Tripathi",
+"Mohd Adnan",
+"Ali Ahmad",
+"Shadab Ansari",
+"Md Danish",
+"Mohd Faiz Qureshi"  
+];
 
 //function for blood
 const inputValBlood = document.querySelector("#name-b");
 const submit_btn_b = document.querySelector("#submit-b");
 submit_btn_b.addEventListener("click",()=>{
     let val = inputValBlood.value;
-    let roll = prompt("Enter Your Key No: ");
+    let roll = prompt("Enter Your Phone No: ");
+    
     let isValid = false;   
-    for(let i=0; i<arr.length; i++){
-      if(blood[i] == roll){
+    for(let i=0; i<blood.length; i++){
+      if(blood[i] == roll && bloodName[i].toLowerCase() == val.toLowerCase()){
         isValid = true;
         break;
       }        
     }
     if(isValid == false){
-      alert("You are not a valid person..");
+      alert("You are not a valid person, please fill name which you had provided at the time of Registration... ");
     }else{
-      
       generatePDFBlood(val);
       alert(val+" , your blood donation certificate is generated successfully...");
     }
+
+  
 });
 
 const generatePDFBlood = async (name) =>{ 
@@ -91,10 +279,10 @@ const inputValPoster = document.querySelector("#name-p");
 const submit_btn_p = document.querySelector("#submit-p");
 submit_btn_p.addEventListener("click",()=>{
     let val = inputValPoster.value;
-    let roll = prompt("Enter Your Key No: ");
+    let key = prompt("Enter Your Phone No: ");
     let isValid = false;   
-    for(let i=0; i<arr.length; i++){
-      if(arr[i] == roll){
+    for(let i=0; i<poster.length; i++){
+      if(poster[i] == key){
         isValid = true;
         break;
       }        
@@ -105,7 +293,7 @@ submit_btn_p.addEventListener("click",()=>{
       generatePDFPoster(val);
       alert(val+" , your certification for poster making competition is generated successfully...");
     }  
-})
+});
 
 const generatePDFPoster = async (name) =>{ 
   const {PDFDocument, StandardFonts, rgb} = PDFLib;
@@ -172,11 +360,10 @@ const submit_btn_s = document.querySelector("#submit-s");
 const inputValSpeech = document.querySelector("#name-s");
 submit_btn_s.addEventListener("click",()=>{
   let val = inputValSpeech.value;
-
-  let roll = prompt("Enter Your Key No: ");
+  let roll = prompt("Enter Your Phone No: ");
     let isValid = false;   
-    for(let i=0; i<arr.length; i++){
-      if(arr[i] == roll){
+    for(let i=0; i<speech.length; i++){
+      if(speech[i] == roll){
         isValid = true;
         break;
       }        
@@ -187,7 +374,7 @@ submit_btn_s.addEventListener("click",()=>{
       generatePDFSpeech(val);
       alert(val+" , your speech competition certificate is generated successfully...");
     }
-})
+});
 
 const generatePDFSpeech = async (name) =>{ 
   const {PDFDocument, StandardFonts, rgb} = PDFLib;

@@ -135,18 +135,25 @@
     border: none;
     margin: 0px 50px;
     padding: 20px;
-    box-shadow: 0px 0px 3px 2px grey;
+    box-shadow: 0px 0px 5px 2px grey;
 }
+
+
 
 .cards h2{
     text-align: center;
     padding: 15px 0px;
     color:red;
+    /* font-family: sans-serif; */
+    font-family: 'Dancing Script', cursive;
+
 }
 .cards p{
     text-align: justify;
     padding: 10px 10px;
     font-size: 1em;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
 }
 .cards .input-name{
     width: 95%;
@@ -163,6 +170,9 @@
     font-size: 1em;
     text-align: center;
     font-weight:700;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    background: transparent;
 }
 
 .cards .btn{
@@ -182,10 +192,16 @@
     padding: 5px 10px;
     margin-top: 20px;
     border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px rgb(165, 165, 179);
+    border: none;
+    transition: .5s;
+
     
 }
 .cards button:hover{
     background-color: rgba(187, 8, 8, 0.799);
+    box-shadow: 2px 3px 5px 2px rgb(128, 124, 124);
+
 }
 
 footer{
@@ -198,6 +214,9 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Dancing Script', cursive;
+    /* font-family: 'DM Sans', sans-serif; */
+    font-weight: lighter;
 }
 footer h3, footer h4, footer h5{
     margin: 8px 0px;
@@ -226,13 +245,14 @@ footer h3,footer h4{
     .container .about-nss h2{
         font-size: 1.5em;
     }
-    
-    footer h2{
-        font-size:1.5em;
-    }
 
     footer h3{
-        font-size:1.2em;
+        font-size:12px;
+        text-align: center;
+    }
+
+    footer h4{
+        font-size:10px;
     }
 }
 
